@@ -1,0 +1,18 @@
+{
+    "manifest_version": 2,
+    "name": "Browsing Analytics",
+    "version": "0.1",
+    "description": "Track your browsing habits with sick graphs.",
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js": ["jquery-3.1.0.min.js", "main.js"]
+    }],
+    "permissions": ["storage"],
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup": "display.html"
+    },
+    "background": {
+        "scripts": ["db.js"]
+    }
+}
