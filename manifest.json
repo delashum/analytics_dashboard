@@ -5,14 +5,14 @@
     "description": "Track your browsing habits with sick graphs.",
     "content_scripts": [{
         "matches": ["<all_urls>"],
-        "js": ["jquery-3.1.0.min.js", "main.js"]
+        "js": ["full/main.js"]
     }],
-    "permissions": ["storage"],
+    "permissions": ["storage", "history"],
     "browser_action": {
-        "default_icon": "icon.png",
-        "default_popup": "display.html"
+        "default_icon": "images/icon.png",
+        "default_popup": "widget/display.html"
     },
     "background": {
-        "scripts": ["db.js"]
+        "scripts": ["db/db.js"]
     }
 }

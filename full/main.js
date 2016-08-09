@@ -22,15 +22,18 @@ function GetUrlRoot() { //OK
     var subData = /^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:\/\n]+)/.exec(fullUrl)[1];
     var components = subData.split('.');
     var obj = {
-        main: components[components.length - 2],
-        suffix: components[components.length - 1]
+        domain: components[components.length - 2],
+        extension: components[components.length - 1],
+        full: fullUrl
     };
     if (components.length === 3) {
-        obj.sub = components[0];
+        obj.subdomain = components[0];
     }
     return obj;
 }
 
-chrome.storage.onChanged.addListener(function (obj, str) {
-    console.log(obj.test.newValue.obj);
-})
+chrome.runtime.sendMessage({
+    request: "popupData"
+}, function (response) {
+    console.log(response.data);
+});
