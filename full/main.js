@@ -35,5 +35,13 @@ function GetUrlRoot() { //OK
 chrome.runtime.sendMessage({
     request: "popupData"
 }, function (response) {
-    console.log(response.data);
+    console.log(response);
+});
+
+
+
+chrome.runtime.sendMessage({
+    request: "log"
+}, function (response) {
+    console.log(response);
 });

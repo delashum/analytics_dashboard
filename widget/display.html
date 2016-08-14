@@ -1,1 +1,21 @@
-<div>This is a test</div>
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body ng-controller="main" ng-init="Init()">
+    <h2 class="center">50 Last Sites</h2>
+    <ul class="last50">
+        <li ng-repeat="item in data.last50"><a href="{{item.fullUrl}}" target="_blank"><b>{{item.shortUrl}}</b></a> <span>{{ParseTime(item.duration)}}</span></li>
+    </ul>
+</body>
+
+<footer>
+    <script src="../depend/angular.min.js"></script>
+    <script src="../depend/moment.min.js"></script>
+    <script src="controller.js"></script>
+</footer>
+
+</html>
