@@ -81,7 +81,7 @@ function Activate(tab) {
     var now = (new Date()).getTime();
     var duration = main.active.start !== 0 ? now - main.active.start : 0;
 
-    if (tab.url.indexOf('chrome') === 0 || duration !== 0 && duration <= settings.minDuration) {
+    if (tab.url.indexOf('chrome') === 0 || (duration !== 0 && duration <= settings.minDuration)) {
         main.active.start = now;
         return;
     } else if (duration >= settings.maxDuration) {
